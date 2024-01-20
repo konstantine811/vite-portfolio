@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "black-10": "#151515",
+      },
+      backgroundImage: {
+        "orange-gradient": "url('/images/bg-gradient.png')",
+      },
+    },
   },
   plugins: [],
 };
