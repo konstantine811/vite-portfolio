@@ -19,6 +19,7 @@ function createCalculatorData(itemObj, trEl) {
   if (itemObj.value) {
     const tdEl = document.createElement("td");
     const btnEl = document.createElement("button");
+    tdEl.className = "p-1";
     btnEl.className += "btn w-full";
     if (itemObj.class) {
       btnEl.className += ` ${itemObj.class}`;
