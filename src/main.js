@@ -1,5 +1,29 @@
 import "../style.scss";
-import { CALCULATOR_ACTIONS, CALCULATOR_CONFIG } from "./config";
+export const CALCULATOR_ACTIONS = {
+  emptyValue: "empty-value",
+  plusMinus: "plus-minus",
+  percent: "percent",
+  results: "results",
+};
+export const CALCULATOR_CONFIG = [
+  [
+    { value: "AC", action: CALCULATOR_ACTIONS.emptyValue },
+    { value: "+/-", action: CALCULATOR_ACTIONS.plusMinus },
+    { value: "%", action: CALCULATOR_ACTIONS.percent },
+    { value: "/" },
+  ],
+  [{ value: "7" }, { value: "8" }, { value: "9" }, { value: "*" }],
+  [{ value: "4" }, { value: "5" }, { value: "6" }, { value: "-" }],
+  [{ value: "1" }, { value: "2" }, { value: "3" }, { value: "+" }],
+  [
+    { value: "0", colspan: 2 },
+    { value: "." },
+    { value: "=", action: CALCULATOR_ACTIONS.results },
+  ],
+];
+
+const calculatorInputEl = document.getElementById("calculatorInput");
+const errorMessage = "Error";
 
 export function calculator() {
   const tableEl = document.getElementById("calculatorBtn");
@@ -19,7 +43,7 @@ function createCalculatorData(itemObj, trEl) {
   if (itemObj.value) {
     const tdEl = document.createElement("td");
     const btnEl = document.createElement("button");
-    tdEl.className = "p-1";
+    tdEl.className = "p-2";
     btnEl.className += "btn w-full";
     if (itemObj.class) {
       btnEl.className += ` ${itemObj.class}`;
@@ -31,7 +55,7 @@ function createCalculatorData(itemObj, trEl) {
     tdEl.appendChild(btnEl);
     trEl.appendChild(tdEl);
 
-    btnEl.addEventListener("click", () => {
+    btnEl.addEventListener("click", function () {
       switchCaclButton(itemObj);
     });
   }
@@ -45,6 +69,15 @@ function switchCaclButton(itemObj) {
     case CALCULATOR_ACTIONS.plusMinus:
       plusMinus();
       break;
+    case CALCULATOR_ACTIONS.results:
+      results();
+      break;
+    case CALCULATOR_ACTIONS.plusMinus:
+      plusMinus();
+      break;
+    case CALCULATOR_ACTIONS.percent:
+      percentValue();
+      break;
     default:
       simpleNumberAction(itemObj);
       break;
@@ -52,13 +85,37 @@ function switchCaclButton(itemObj) {
 }
 
 function emptyValue() {
-  console.log("empty value");
+  calculatorInputEl.value = "";
+}
+
+function results() {
+  try {
+    calculatorInputEl.value = eval(calculatorInputEl.value);
+  } catch {
+    calculatorInputEl.value = errorMessage;
+  }
+}
+
+function percentValue() {
+  try {
+    calculatorInputEl.value = eval(calculatorInputEl.value) / 100;
+  } catch (error) {
+    calculatorInputEl.value = errorMessage;
+  }
 }
 
 function plusMinus() {
-  console.log("add plus/minus");
+  try {
+    const value = calculatorInputEl.value;
+    if (value !== "" && value !== errorMessage) {
+      console.log(eval(value));
+      calculatorInputEl.value = -Number(eval(value));
+    }
+  } catch {
+    calculatorInputEl.value = errorMessage;
+  }
 }
 
 function simpleNumberAction(itemObj) {
-  console.log("iitem obj", itemObj.value);
+  calculatorInputEl.value += itemObj.value;
 }
