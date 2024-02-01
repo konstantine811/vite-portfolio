@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do App</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-start">
+        <a class="navbar-item" href="../index.html">Portfolio</a>
+      </div>
+      <div class="navbar-center !items-center">
+        <a class="navbar-item" href="../index.html">Home</a>
+        <a class="navbar-item" href="./about.html">About</a>
+        <div class="dropdown-container justify-center">
+          <div class="dropdown">
+            <label class="btn btn-solid-primary my-2" tabindex="0">Apps</label>
+            <div class="dropdown-menu dropdown-menu-bottom-center">
+              <a class="dropdown-item text-sm dropdown-active">Todo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center mt-10">
+      <label class="text-xl cursor-pointer select-none" for="modal-1">
+        <span>Додати задачу</span>
+        <div class="btn btn-outline btn-circle">+</div>
+      </label>
+      <input class="modal-state" id="modal-1" type="checkbox" />
+      <div class="modal">
+        <label class="modal-overlay" for="modal-1"></label>
+        <div class="modal-content w-1/2 flex flex-col gap-5">
+          <label
+            for="modal-1"
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >✕</label
+          >
+          <h2 class="text-xl">Опиши свою задачу</h2>
+          <form id="taskForm" class="flex flex-col gap-5">
+            <input
+              id="taskTitle"
+              class="input max-w-full"
+              required
+              placeholder="Заголовок"
+            />
+            <textarea
+              id="taskDescription"
+              class="textarea max-w-full"
+              placeholder="Опис задачі"
+            ></textarea>
+            <select id="taskPriority" class="select select-solid">
+              <option value="high">Термінова</option>
+              <option value="middle" selected>Звичайна</option>
+              <option value="low">Низька</option>
+            </select>
+            <label for="modal-1" class="btn btn-block">Створити задачу</label>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="../src/todo/index.js"></script>
+  </body>
+</html>

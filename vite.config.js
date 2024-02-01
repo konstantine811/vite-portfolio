@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "/pages/about.html"),
+        todo: resolve(__dirname, "/pages/todo.html"),
       },
     },
   },
