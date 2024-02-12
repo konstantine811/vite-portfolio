@@ -1,5 +1,7 @@
 import "../style.scss";
-import "./func-train";
+// import "./func-train";
+// import "./async";
+import "./promise-practice";
 
 const cardBodyEl = document.getElementById("cardBody");
 function createBtn(value) {
