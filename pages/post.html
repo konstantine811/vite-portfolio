@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Blog</title>
   </head>
   <body>
     <div class="navbar">
@@ -12,24 +12,26 @@
       </div>
       <div class="navbar-center !items-center">
         <a class="navbar-item" href="../index.html">Home</a>
-        <a class="navbar-item navbar-active" href="#">About</a>
+        <a class="navbar-item" href="./about.html">About</a>
         <div class="dropdown-container justify-center">
           <div class="dropdown">
             <label class="btn btn-solid-primary my-2" tabindex="0">Apps</label>
             <div class="dropdown-menu dropdown-menu-bottom-center">
-              <a class="dropdown-item text-sm" href="./todo.html">Todo</a>
-              <a class="dropdown-item text-sm" href="./post.html">Blog Posts</a>
+              <a class="dropdown-item text-sm">Todo</a>
+              <a
+                class="dropdown-item text-sm dropdown-active"
+                href="./post.html"
+                >Blog Posts</a
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
-    <button class="button">Edit</button>
-    <div class="flex justify-center mt-10">
-      <div class="card">
-        <div id="cardBody" class="card-body"></div>
-      </div>
+    <div id="pageWrap" class="container">
+      <h1 class="text-5xl text-center mt-5">Blog Posts</h1>
+      <div id="cardWrap" class="flex gap-3 flex-wrap mt-2 justify-center"></div>
     </div>
-    <script type="module" src="../src/about.js"></script>
+    <script type="module" src="../src/posts/index.js"></script>
   </body>
 </html>

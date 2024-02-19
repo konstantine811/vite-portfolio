@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         about: resolve(__dirname, "/pages/about.html"),
         todo: resolve(__dirname, "/pages/todo.html"),
+        posts: resolve(__dirname, "/pages/post.html"),
       },
     },
   },
