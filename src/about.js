@@ -1,4 +1,7 @@
 import "../style.scss";
+// import "./func-train";
+// import "./async";
+import "./promise-practice";
 
 const cardBodyEl = document.getElementById("cardBody");
 function createBtn(value) {
@@ -53,6 +56,14 @@ const objValues = {
   key: "3",
 };
 
+const objValuesSecond = {
+  value: 2,
+  title: "Another number",
+  class: "flex",
+  key: "30",
+};
+
+/*
 for (let key in objValues) {
   console.log(key);
   console.log(objValues[key]);
@@ -66,4 +77,4 @@ const arrSmiles = [
 for (let smile of arrSmiles) {
   console.log(smile);
   createBtn(smile.title);
-}
+} */
