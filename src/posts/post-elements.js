@@ -39,9 +39,54 @@ function createCard(cardContent) {
 }
 
 export function createCards(data) {
-  for (let i = 0; i < data.length; i++) {
+  const cloneData = data.slice(0, 10);
+  const cardElms = cloneData.map(function (d) {
+    d.body = "some else";
+    return /*html*/ `
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-header">${d.title}</h2>
+        <p class="text-content2">
+          ${d.body}
+        </p>
+      </div>
+    </div>
+  `;
+  });
+
+  console.log("data", data);
+  postElements.cardWrap.innerHTML = cardElms;
+  console.log(cardElms);
+  /*  const newData = [];
+  data.forEach(function (d, i) {
+    newData.push({
+      body: d.body,
+      title: d.title,
+      name: `Hello from this index ${i}`,
+    });
+
+    return createCard(d);
+  });
+
+  const newDataFromMap = data
+    .map(function (d, i) {
+       return {
+         body: d.body,
+         title: d.title,
+         name: `Hello from this index ${i}`,
+       };
+    })
+    .filter(function (d) {
+      if (d !== undefined) {
+        return d;
+      }
+    });
+  console.log("data___", data);
+  console.log("newData_____", newData);
+  console.log("newDataFromMap____", newDataFromMap); */
+  /*   for (let i = 0; i < data.length; i++) {
     createCard(data[i]);
-  }
+  } */
 }
 
 export function createPreloader(loadMsg = "Loading") {
