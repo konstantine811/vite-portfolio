@@ -39,10 +39,11 @@ function createCard(cardContent) {
 }
 
 export function createCards(data) {
-  const cloneData = data.slice(0, 10);
-  const cardElms = cloneData.map(function (d) {
-    d.body = "some else";
-    return /*html*/ `
+  data.forEach(function (item) {
+    createCard(item);
+  });
+  /* const cardElms = cloneData.map(function (d) {
+    return  `
     <div class="card">
       <div class="card-body">
         <h2 class="card-header">${d.title}</h2>
@@ -52,11 +53,26 @@ export function createCards(data) {
       </div>
     </div>
   `;
-  });
+  }); */
 
-  console.log("data", data);
-  postElements.cardWrap.innerHTML = cardElms;
-  console.log(cardElms);
+  /*   const array = ["Петро", "Андрій", "Василь"];
+
+  const sum = array.reduce(function (accumValue, currentValue, index) {
+    return { ...accumValue, [index]: currentValue };
+  }, {});
+
+  const animals = ["ant", "bison", "camel", "duck", "elephant"];
+  console.log("animals", animals);
+  console.log("___slice", animals.slice(-2));
+  console.log("___Splice", animals.splice(1, 2));
+  console.log("after", animals); */
+  // accum
+  // 1 => {}     {[0]: "Петро"}
+  // accum
+  // 2 => {[0]: "Петро"} { [0]: "Петро", [1]: "Андрій"}
+  // 3 => { [0]: "Петро", [1]: "Андрій"}, {[0]: "Петро", [1]: "Андрій", [2]: "Василь"}
+
+  // console.log(names);
   /*  const newData = [];
   data.forEach(function (d, i) {
     newData.push({

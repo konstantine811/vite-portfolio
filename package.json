@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "json-server": "json-server -w db.json"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
