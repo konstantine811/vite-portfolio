@@ -39,9 +39,70 @@ function createCard(cardContent) {
 }
 
 export function createCards(data) {
-  for (let i = 0; i < data.length; i++) {
+  data.forEach(function (item) {
+    createCard(item);
+  });
+  /* const cardElms = cloneData.map(function (d) {
+    return  `
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-header">${d.title}</h2>
+        <p class="text-content2">
+          ${d.body}
+        </p>
+      </div>
+    </div>
+  `;
+  }); */
+
+  /*   const array = ["Петро", "Андрій", "Василь"];
+
+  const sum = array.reduce(function (accumValue, currentValue, index) {
+    return { ...accumValue, [index]: currentValue };
+  }, {});
+
+  const animals = ["ant", "bison", "camel", "duck", "elephant"];
+  console.log("animals", animals);
+  console.log("___slice", animals.slice(-2));
+  console.log("___Splice", animals.splice(1, 2));
+  console.log("after", animals); */
+  // accum
+  // 1 => {}     {[0]: "Петро"}
+  // accum
+  // 2 => {[0]: "Петро"} { [0]: "Петро", [1]: "Андрій"}
+  // 3 => { [0]: "Петро", [1]: "Андрій"}, {[0]: "Петро", [1]: "Андрій", [2]: "Василь"}
+
+  // console.log(names);
+  /*  const newData = [];
+  data.forEach(function (d, i) {
+    newData.push({
+      body: d.body,
+      title: d.title,
+      name: `Hello from this index ${i}`,
+    });
+
+    return createCard(d);
+  });
+
+  const newDataFromMap = data
+    .map(function (d, i) {
+       return {
+         body: d.body,
+         title: d.title,
+         name: `Hello from this index ${i}`,
+       };
+    })
+    .filter(function (d) {
+      if (d !== undefined) {
+        return d;
+      }
+    });
+  console.log("data___", data);
+  console.log("newData_____", newData);
+  console.log("newDataFromMap____", newDataFromMap); */
+  /*   for (let i = 0; i < data.length; i++) {
     createCard(data[i]);
-  }
+  } */
 }
 
 export function createPreloader(loadMsg = "Loading") {

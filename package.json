@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "json-server": "json-server -w db.json"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
@@ -16,6 +17,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "moment": "^2.30.1",
     "rippleui": "^1.12.1"
   }
 }
