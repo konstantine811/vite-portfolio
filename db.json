@@ -1,25 +1,20 @@
 {
   "todo-list": [
     {
-      "id": "497880211363.0995",
+      "id": "1120210927520.5125",
       "title": "Зробити блог",
-      "description": "",
-      "priority": "middle",
-      "data": 1709233027174
-    },
+      "description": "Опис",
+      "priority": "low",
+      "date": 1709662931189
+    }
+  ],
+  "todo-list-done": [
     {
-      "id": "149883955744.63333",
-      "title": "Ще одна задача",
-      "description": "ОПис",
-      "priority": "middle",
-      "date": 1709235262049
-    },
-    {
-      "id": "244424971524.32437",
-      "title": "Зробити блог",
-      "description": "",
-      "priority": "middle",
-      "date": 1709235283306
+      "id": "1431421778414.1096",
+      "title": "Ще одна задача попити чаю",
+      "description": "Опиваива",
+      "priority": "high",
+      "date": 1709662070574
     }
   ]
 }
